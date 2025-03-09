@@ -3,129 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hartford Style Research Lab</title>
-  
-  <style>
-    /* 기본 리셋 */
-    * {
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #FFFFFF;
-      color: #333333;
-      line-height: 1.6;
-    }
-
-    /* 헤더 스타일 */
-    header {
-      background-color: #D21034; /* Hartford Red */
-      color: #FFFFFF;
-      padding: 10px 20px;
-    }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .navbar-brand {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    /* 네비게이션 메뉴 (데스크톱) */
-    nav ul {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
-
-    nav ul li a {
-      color: #FFFFFF;
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
-
-    nav ul li a:hover {
-      opacity: 0.8;
-    }
-
-    /* 모바일 토글 버튼 */
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: #FFFFFF;
-      cursor: pointer;
-    }
-
-    /* 반응형: 화면 폭이 768px 이하인 경우 */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;  /* 햄버거 버튼 표시 */
-      }
-
-      /* 처음에는 메뉴 숨김 */
-      nav ul {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        flex-direction: column;
-        background-color: #D21034;
-        width: 200px;
-        padding: 20px;
-        gap: 10px;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
-      }
-
-      /* 토글 활성화 시 나타나는 메뉴 */
-      nav ul.active {
-        transform: translateX(0);
-      }
-    }
-
-    /* 메인 컨텐츠 */
-    main {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 0 20px;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-    }
-
-    /* 푸터 스타일 */
-    footer {
-      background-color: #f2f2f2;
-      padding: 10px 20px;
-      text-align: center;
-      color: #555;
-    }
-  </style>
+  <title>Welcome to HUSL</title>
+  <!-- 외부 CSS 파일 연결 -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
   <div class="navbar">
-    <div class="navbar-brand">University of Hartford Style</div>
+    <!-- 로고 + 브랜드명 영역 -->
+    <div class="navbar-brand">
+      <!-- 이미지 경로를 실제 파일명/logo 경로로 수정하세요 -->
+      <img src="images/husl_logo.png" alt="HUSL Logo" class="husl-logo">
+      <!-- 로고 옆에 텍스트 추가할 경우 (선택 사항) -->
+      <!-- <span>HUSL Lab</span> -->
+    </div>
+<!--    <div class="navbar-brand">HUSL @ UHart</div>-->
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav>
       <ul id="menuList">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#">People</a></li>
         <li><a href="#">Research</a></li>
         <li><a href="#">Publications</a></li>
+        <li><a href="#">News</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
@@ -133,27 +34,113 @@
 </header>
 
 <main>
-  <h1>Welcome to Our Lab</h1>
+  <h1 style="color: #D21034;text-align: center">Welcome to HUSL @ UHart!</h1>
+
+  <!-- =============== 유튜브 동영상 섹션(슬라이더와는 별도) =============== -->
+  <section class="video-section">
+<!--    <h2>Check Out Our Video</h2>-->
+    <div class="video-container">
+      <iframe
+              src="https://www.youtube.com/embed/VnDfIHZTLJs"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
   <p>
-    이 템플릿은 Hartford의 브랜드 컬러를 활용하고, 상단에 간단한 메뉴 구조를 배치한 예시입니다.
-    데스크톱에서는 메뉴가 가로로 펼쳐지고, 모바일 환경에서는 햄버거 버튼을 통해 메뉴를 열 수 있습니다.
+    The <strong>Hartford Ubiquitous Systems for Lives (HUSL)</strong> lab is driven by a mission
+    to <strong>save lives</strong> and <strong>improve human well-being</strong> in times of crisis,
+    disaster, and beyond. We explore <strong>advanced sensor technology</strong>, <strong>robotics</strong>,
+    <strong>AI</strong>, and <strong>ubiquitous computing</strong> to create <strong>innovative devices
+    and systems</strong> that can assist people when they need it most.
   </p>
+  <p>&nbsp;</p>
   <p>
-    여기서는 <strong>#D21034</strong> 색상을 주요 포인트 컬러로 사용했습니다. 
-    학교 로고, 텍스트 폰트, 보조 색상 등은 학교의 브랜드 가이드를 참고해 세부적으로 수정해 주세요.
+    By merging <strong>cutting-edge research</strong> with real-world applications, HUSL strives to build a
+    <strong>safer</strong>, <strong>more resilient</strong> future—one where technology seamlessly enhances
+    everyday life and empowers communities worldwide.
   </p>
 </main>
 
+<!-- ============================== 이미지 슬라이더 섹션 시작 ============================== -->
+<section class="image-slider">
+  <div class="slider-container">
+    <!-- 슬라이드 1 -->
+    <div class="slide">
+      <img src="images/main/1.jpg" alt="Slide 1">
+    </div>
+    <!-- 슬라이드 2 -->
+    <div class="slide">
+      <img src="images/main/2.jpg" alt="Slide 2">
+    </div>
+    <!-- 슬라이드 3 -->
+    <div class="slide">
+      <img src="images/main/3.jpg" alt="Slide 3">
+    </div>
+    <div class="slide">
+      <img src="images/main/4.jpg" alt="Slide 4">
+    </div>
+    <div class="slide">
+      <img src="images/main/5.jpg" alt="Slide 5">
+    </div>
+
+    <!-- 이전 / 다음 버튼 -->
+    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="next" onclick="plusSlides(1)">&#10095;</button>
+  </div>
+</section>
+<!-- ============================== 이미지 슬라이더 섹션 끝 ============================== -->
+
 <footer>
-  <p>© 2025 My Research Lab – Powered by a Hartford-inspired design</p>
+  <p>© 2025 DBK Robotics</p>
 </footer>
 
 <script>
+  /* 모바일 메뉴 토글 */
   function toggleMenu() {
     const menuList = document.getElementById('menuList');
     menuList.classList.toggle('active');
   }
 </script>
+<script>
+  /* 이미 작성된 모바일 메뉴 토글 스크립트 */
+  function toggleMenu() {
+    const menuList = document.getElementById('menuList');
+    menuList.classList.toggle('active');
+  }
 
+  /* ===================== 슬라이더 스크립트 ===================== */
+  let slideIndex = 0;
+  let slides;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 모든 .slide 요소를 가져옵니다.
+    slides = document.querySelectorAll('.slide');
+    // 시작 시 첫 번째 슬라이드만 보이도록 설정
+    showSlides(slideIndex);
+  });
+
+  // 슬라이드를 n만큼 이동 (+1 → 다음 슬라이드, -1 → 이전 슬라이드)
+  function plusSlides(n) {
+    slideIndex += n;
+    showSlides(slideIndex);
+  }
+
+  // 현재 슬라이드 인덱스에 따라 슬라이드를 노출/숨김 처리
+  function showSlides(n) {
+    if (n >= slides.length) {
+      slideIndex = 0;
+    }
+    if (n < 0) {
+      slideIndex = slides.length - 1;
+    }
+    slides.forEach((slide, index) => {
+      slide.style.display = (index === slideIndex) ? 'block' : 'none';
+    });
+  }
+</script>
 </body>
 </html>
