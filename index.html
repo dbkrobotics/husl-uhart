@@ -1,11 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>My Lab Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hartford Style Research Lab</title>
+  
+  <style>
+    /* 기본 리셋 */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFFFFF;
+      color: #333333;
+      line-height: 1.6;
+    }
+
+    /* 헤더 스타일 */
+    header {
+      background-color: #D21034; /* Hartford Red */
+      color: #FFFFFF;
+      padding: 10px 20px;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* 네비게이션 메뉴 (데스크톱) */
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    nav ul li a:hover {
+      opacity: 0.8;
+    }
+
+    /* 모바일 토글 버튼 */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+
+    /* 반응형: 화면 폭이 768px 이하인 경우 */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;  /* 햄버거 버튼 표시 */
+      }
+
+      /* 처음에는 메뉴 숨김 */
+      nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        flex-direction: column;
+        background-color: #D21034;
+        width: 200px;
+        padding: 20px;
+        gap: 10px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* 토글 활성화 시 나타나는 메뉴 */
+      nav ul.active {
+        transform: translateX(0);
+      }
+    }
+
+    /* 메인 컨텐츠 */
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    /* 푸터 스타일 */
+    footer {
+      background-color: #f2f2f2;
+      padding: 10px 20px;
+      text-align: center;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Lab!</h1>
-  <p>이곳은 간단한 연구실 홈페이지 예시입니다.</p>
+
+<header>
+  <div class="navbar">
+    <div class="navbar-brand">University of Hartford Style</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="menuList">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Research</a></li>
+        <li><a href="#">Publications</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1>Welcome to Our Lab</h1>
+  <p>
+    이 템플릿은 Hartford의 브랜드 컬러를 활용하고, 상단에 간단한 메뉴 구조를 배치한 예시입니다.
+    데스크톱에서는 메뉴가 가로로 펼쳐지고, 모바일 환경에서는 햄버거 버튼을 통해 메뉴를 열 수 있습니다.
+  </p>
+  <p>
+    여기서는 <strong>#D21034</strong> 색상을 주요 포인트 컬러로 사용했습니다. 
+    학교 로고, 텍스트 폰트, 보조 색상 등은 학교의 브랜드 가이드를 참고해 세부적으로 수정해 주세요.
+  </p>
+</main>
+
+<footer>
+  <p>© 2025 My Research Lab – Powered by a Hartford-inspired design</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menuList = document.getElementById('menuList');
+    menuList.classList.toggle('active');
+  }
+</script>
+
 </body>
 </html>
