@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact - HUSL @ UHart</title>
+    <!-- 기존 styles.css 연결 -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CDN 추가 (아이콘 사용을 위해) -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- 페이지별 추가 스타일 (선택 사항) -->
+    <style>
+        .contact-section {
+            max-width: 600px;
+            margin: 60px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .contact-section h1 {
+            margin-bottom: 30px;
+            color: #D21034;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .contact-card {
+            background-color: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .contact-card h2 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        /* 아이콘과 텍스트를 수평으로 배치하기 위해 */
+        .contact-card p {
+            font-size: 1rem;
+        }
+        .icon-with-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .contact-card a {
+            color: #D21034;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .contact-section {
+                margin: 40px auto;
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="navbar-brand">
+            <img src="images/husl_logo.png" alt="HUSL Logo" class="husl-logo">
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul id="menuList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="people.html" >People</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publication.html" >Publications</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="contact-section">
+        <h1>Contact Us</h1>
+        <p>
+            Have any questions or inquiries?<br>
+            Feel free to reach out via email or follow us on Instagram!
+        </p>
+
+        <div class="contact-info">
+            <!-- Email 카드 -->
+            <div class="contact-card">
+                <h2>Email</h2>
+                <p>
+          <span class="icon-with-text">
+            <!-- 이메일 아이콘 -->
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:dbk@hartford.edu">dbk@hartford.edu</a>
+          </span>
+                </p>
+            </div>
+            <!-- Instagram 카드 -->
+            <div class="contact-card">
+                <h2>Instagram</h2>
+                <p>
+          <span class="icon-with-text">
+            <!-- 인스타그램 아이콘 -->
+            <i class="fab fa-instagram"></i>
+              <!-- 실제 연구실 인스타 URL로 변경 -->
+            <a href="https://www.instagram.com/husl_robotics" target="_blank">@husl_robotics</a>
+          </span>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p style="text-align:center;">© 2025 HUSL – All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('menuList').classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
