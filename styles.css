@@ -59,6 +59,12 @@ nav ul li a:hover {
     color: #FFFFFF;
     cursor: pointer;
 }
+/* 네비게이션에서 현재 페이지 표시 */
+.navbar ul li a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #fff;  /* 흰색 밑줄 */
+    /* 또는 배경색, 폰트색 등 원하는 강조 스타일 */
+}
 
 /* ========== 반응형: 화면 폭이 768px 이하인 경우 ========== */
 @media (max-width: 768px) {
@@ -217,4 +223,146 @@ strong {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+
+/* 사람들 전체 섹션 공통 */
+.people-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 테이블 스타일 (3열) */
+.people-table {
+    width: 100%;
+    border-collapse: separate; /* 혹은 collapse */
+    border-spacing: 0 20px;    /* 행 간격 */
+}
+
+.people-table td {
+    vertical-align: top;
+    width: 33.33%;
+    padding: 10px;
+}
+
+/* 공통 카드 스타일 */
+.person-card {
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}
+
+.person-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.person-card h2 {
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.person-card .role {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.person-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+/* Principal Investigator card (예: 더 크게 보여줄 수도 있음) */
+.pi-card {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    text-align: center;
+    background-color: #fffafc;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.pi-card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.pi-card h2 {
+    margin-bottom: 6px;
+    color: #D21034; /* 색 강조 */
+}
+
+/* ===== 반응형: 모바일에서 테이블을 세로로 쌓기 ===== */
+@media (max-width: 768px) {
+    .people-table, .people-table tr, .people-table td {
+        display: block;
+        width: 100%;
+    }
+    /* 테이블 셀 사이 간격 */
+    .people-table td {
+        margin-bottom: 20px;
+    }
+    /* 이미지 사이즈도 살짝 줄이기 */
+    .person-card img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+.profile-detail {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.profile-detail h1 {
+    margin-bottom: 10px;
+    color: #D21034; /* 포인트 컬러 */
+}
+
+.profile-top {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.profile-top img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.profile-info .role {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .profile-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-top img {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
 }

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>People - HUSL @ UHart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="navbar-brand">HUSL @ UHart</div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul id="menuList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="people.html" class="active">People</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publication.html">Publications</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Principal Investigator 섹션 (한 명) -->
+    <section class="people-section">
+        <h1>Principal Investigator</h1>
+        <div class="pi-card">
+            <a href="./pages/people/dbk.html" style="text-decoration-line: none;">
+            <img src="./images/people/dbk.JPG" alt="PI Photo">
+            <h2>Dongbin Kim, Ph.D.</h2>
+            </a>
+            <p class="role">Director, HUSL @ UHart</p>
+            <p>Assistant Professor, Robotics Engineering</p>
+            <p>College of Engineering, Technology, and Architecture</p>
+            <p>Email: <a href="mailto:dbk@hartford.edu">dbk@hartford.edu</a></p>
+        </div>
+    </section>
+
+    <!-- Undergraduate Researchers (테이블, 3열) -->
+    <section class="people-section">
+        <h1>Undergraduate Researchers</h1>
+        <table class="people-table">
+            <!-- 첫 번째 행 (가로 3명) -->
+            <tr>
+                <td>
+                    <div class="person-card">
+                        <img src="./images/people/william.jpeg" alt="william">
+                        <h2>William Preye</h2>
+                        <p class="role">B.S. Candidate</p>
+                        <p class="role">Audio Engineering Technology</p>
+<!--                        <p>Working on sensor-based wearable devices for emergency triage.</p>-->
+                        <p>Email: <a href="mailto:preye@hartford.edu">preye@hartford.edu</a></p>
+                    </div>
+                </td>
+                <td>
+                    <div class="person-card">
+                        <img src="./images/people/jacob.jpg" alt="jacob">
+                        <h2>Jacob Davis</h2>
+                        <p class="role">B.S. Candidate</p>
+                        <p class="role">Mechanical Engineering</p>
+<!--                        <p>Specializes in mobile app development for disaster communication.</p>-->
+                        <p>Email: <a href="mailto:jacodavis@hartford.edu">jacodavis@hartford.edu</a></p>
+                    </div>
+                </td>
+                <td>
+                    <div class="person-card">
+                        <img src="./images/people/connor.jpeg" alt="connor">
+                        <h2>Connor Tuohy</h2>
+                        <p class="role">B.S. Candidate</p>
+                        <p class="role">ElectroMechanical Engineering Technology</p>
+<!--                        <p>Focuses on low-power IoT devices for early hazard detection.</p>-->
+                        <p>Email: <a href="mailto:tuohy@hartford.edu">tuohy@hartford.edu</a></p>
+                    </div>
+                </td>
+            </tr>
+            <!-- 두 번째 행 (더 많은 학생이 있을 경우) -->
+            <tr>
+                <td>
+                    <div class="person-card">
+                        <img src="./images/people/cristina.jpeg" alt="cristina">
+                        <h2>Cristina Marchetti</h2>
+                        <p class="role">B.S. Candidate</p>
+                        <p class="role">Mechanical Engineering</p>
+<!--                        <p>Researching data visualization for real-time crisis dashboards.</p>-->
+                        <p>Email: <a href="mailto:cmarchett@hartford.edu">cmarchett@hartford.edu</a></p>
+                    </div>
+                </td>
+                <td>
+                    <div class="person-card">
+                        <img src="./images/people/jet.jpg" alt="jet">
+                        <h2>Jet Mangual Corchado</h2>
+                        <p class="role">B.S. Candidate</p>
+                        <p class="role">Mechanical Engineering</p>
+<!--                        <p>Interested in drone-based environmental sensing and mapping.</p>-->
+                        <p>Email: <a href="mailto:mangualco@hartford.edu">mangualco@hartford.edu</a></p>
+                    </div>
+                </td>
+                <td>
+                    <div class="person-card">
+                        <img src="./images/people/matthew.jpeg" alt="matthew">
+                        <h2>Matthew Haughton</h2>
+                        <p class="role">B.S. Candidate</p>
+                        <p class="role">ElectroMechanical Engineering Technology</p>
+<!--                        <p>Developing embedded software for rapid rescue prototypes.</p>-->
+                        <p>Email: <a href="mailto:mahaughto@hartford.edu">mahaughto@hartford.edu</a></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Alumni (테이블, 3열) -->
+    <section class="people-section">
+        <h1>Alumni</h1>
+<!--        <table class="people-table">-->
+<!--            <tr>-->
+<!--                <td>-->
+<!--                    <div class="person-card">-->
+<!--                        <img src="https://via.placeholder.com/200" alt="Alumni 1">-->
+<!--                        <h2>Dr. Emily Brown</h2>-->
+<!--                        <p class="role">Ph.D. 2022</p>-->
+<!--                        <p>Now Senior Research Scientist at XYZ Robotics, focusing on swarm drones.</p>-->
+<!--                    </div>-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    <div class="person-card">-->
+<!--                        <img src="https://via.placeholder.com/200" alt="Alumni 2">-->
+<!--                        <h2>Michael Lee</h2>-->
+<!--                        <p class="role">B.S. 2021</p>-->
+<!--                        <p>Pursuing M.S. in AI at MIT; previously worked on wearable sensor design.</p>-->
+<!--                    </div>-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    <div class="person-card">-->
+<!--                        <img src="https://via.placeholder.com/200" alt="Alumni 3">-->
+<!--                        <h2>Sarah Park</h2>-->
+<!--                        <p class="role">M.S. 2019</p>-->
+<!--                        <p>Joined ABC Tech as a software engineer specializing in emergency comms.</p>-->
+<!--                    </div>-->
+<!--                </td>-->
+<!--            </tr>-->
+            <!-- alumni가 더 있으면 tr/td 반복 -->
+        </table>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2025 HUSL – All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menuList = document.getElementById('menuList');
+        menuList.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
