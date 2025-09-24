@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Research - HUSL @ UHart</title>
+    <!-- Existing site-wide styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* ============ MAIN PAGE CONTAINER ============ */
+        .research-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .research-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #D21034;
+        }
+
+        /* ============ 1×4 GRID (Active Research Topics) ============ */
+        .grid-1x4-topics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns in one row */
+            gap: 20px;
+            max-width: 1200px; /* limit total width */
+            margin: 0 auto;    /* center the grid */
+        }
+        .topic {
+            background-color: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+            /* Flex for vertical alignment */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .topic img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .topic h3 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        .topic p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        /* Responsive for .grid-1x4-topics:
+           4 columns → 2 columns at 992px → 1 column at 600px */
+        @media (max-width: 992px) {
+            .grid-1x4-topics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .grid-1x4-topics {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== Nx1 LAYOUT (Single Column), each project has 2 columns inside ========== */
+        .projects-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .projects-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #D21034;
+        }
+
+        /* Wrap multiple projects in a single column container */
+        .grid-nx1-projects {
+            display: grid;
+            grid-template-columns: 1fr; /* One row per project */
+            gap: 20px;
+            max-width: 1000px; /* or 1200px, up to you */
+            margin: 0 auto;
+        }
+
+        /* Each .project is a two-column row: left = photo, right = text */
+        .project {
+            background-color: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+            display: flex;
+            gap: 20px;            /* space between image & text column */
+            align-items: flex-start;
+        }
+
+        /* Left column: Photo */
+        .project img {
+            width: 200px;         /* fixed width for photo, or set a % if you prefer */
+            height: auto;
+            object-fit: cover;    /* or contain, depending on your preference */
+            border-radius: 4px;
+        }
+
+        /* Right column: Title, Description, Funding, Topics */
+        .project-content {
+            flex: 1;             /* takes remaining space */
+            display: flex;
+            flex-direction: column;
+        }
+        .project-content h3 {
+            margin: 0 0 8px;
+            color: #333;
+        }
+        .project-content p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 8px;  /* small space between paragraphs */
+        }
+        .project-content p strong {
+            color: #333;
+        }
+
+        /* Adjust for smaller screens */
+        @media (max-width: 600px) {
+            .project {
+                flex-direction: column;   /* stack image above text on mobile */
+                align-items: center;
+            }
+            .project img {
+                width: 100%;
+                max-width: 400px; /* or any limit you want */
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="navbar-brand">
+            <img src="images/husl_logo.png" alt="HUSL Logo" class="husl-logo">
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul id="menuList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publication.html" class="active">Publications</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ========== 1×4 SECTION: Active Research Topics ========== -->
+<main class="research-container">
+    <h2>Active Research Topics</h2>
+    <div class="grid-1x4-topics">
+        <!-- Topic #1 -->
+        <div class="topic">
+            <img src="images/research/aerialmanipulation.png" alt="Topic 1">
+            <h3>Aerial Manipulation</h3>
+            <p>
+                Exploring advanced drones with robot arms or tools, enabling them
+                to perform complex tasks in challenging or hazardous environments.
+            </p>
+        </div>
+        <!-- Topic #2 -->
+        <div class="topic">
+            <img src="images/research/robotswarm.png" alt="Topic 2">
+            <h3>Robot Swarm</h3>
+            <p>
+                Developing collaborative multi-robot systems to tackle large-scale missions
+                from search-and-rescue operations to distributed data gathering and exploration.
+            </p>
+        </div>
+        <!-- Topic #3 -->
+        <div class="topic">
+            <img src="images/research/mixedreality.png" alt="Topic 3">
+            <h3>Human-Embodied Robots Through Mixed Reality</h3>
+            <p>
+                Bridging the gap between humans and robots via immersive AR/VR,
+                empowering intuitive remote teleoperation and real-time human-in-the-loop control.
+            </p>
+        </div>
+        <!-- Topic #4 -->
+        <div class="topic">
+            <img src="images/research/learningbydemonstration.png" alt="Topic 4">
+            <h3>Robot Learning by Demonstration using AI</h3>
+            <p>
+                Combining AI with demonstration-based teaching to help robots rapidly acquire
+                new tasks and adapt to dynamic environments.
+            </p>
+        </div>
+    </div>
+</main>
+<section class="projects-container">
+    <h2>Current Projects</h2>
+    <div class="grid-nx1-projects">
+
+
+        <div class="project">
+            <img src="images/projects/project1.jpg" alt="Project 1">
+            <div class="project-content">
+                <h3>Autonomous Drone Delivery</h3>
+                <p>
+                    A quick summary or tagline describing the project’s main purpose.
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> NASA Grant #ABC123
+                </p>
+                <p>
+                    <strong>Topics:</strong> UAV routing, sensor fusion, real-time tracking
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Unmanned Aerial Systems (ICUAS), 2017
+                    <a href="https://doi.org/10.1109/ICUAS.2017.7991455" target="_blank" rel="noopener">[DOI]</a>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="project">
+            <img src="images/projects/project2.jpg" alt="Project 2">
+            <div class="project-content">
+                <h3>Swarm-Based Disaster Relief</h3>
+                <p>
+                    Collaborative multi-robot approach for crisis management,
+                    employing advanced mapping and communication.
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> NSF Grant #XYZ202
+                </p>
+                <p>
+                    <strong>Topics:</strong> Multi-robot systems, disaster response, reinforcement learning
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Unmanned Aerial Systems (ICUAS), 2017
+                    <a href="https://doi.org/10.1109/ICUAS.2017.7991455" target="_blank" rel="noopener">[DOI]</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Add more .project as needed! -->
+
+    </div>
+</section>
+
+<section class="projects-container">
+    <h2>Past Projects</h2>
+    <div class="grid-nx1-projects">
+
+        <div class="project">
+            <img src="images/projects/pastproject1-skywriting.JPG" alt="Project 11">
+            <div class="project-content">
+                <h3>Skywriting Unmanned Aerial Vehicle (UAV)</h3>
+                <p>
+                    Use a single UAV to generate (print) images in the sky during the day time.
+                    The message could be used in situations like search and rescue, disaster response
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> University of Nevada, Las Vegas (UNLV)
+                </p>
+                <p>
+                    <strong>Topics:</strong> Drones, Skywriting, Control, Autonomous Flight
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Unmanned Aerial Systems (ICUAS), 2017
+                    <a href="https://doi.org/10.1109/ICUAS.2017.7991455" target="_blank" rel="noopener">[DOI]</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/projects/pastproject1-skywriting.JPG" alt="Project 10">
+            <div class="project-content">
+                <h3>Skywriting Unmanned Aerial Vehicle (UAV)</h3>
+                <p>
+                    Use a single UAV to generate (print) images in the sky during the day time.
+                    The message could be used in situations like search and rescue, disaster response
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> University of Nevada, Las Vegas (UNLV)
+                </p>
+                <p>
+                    <strong>Topics:</strong> Drones, Skywriting, Control, Autonomous Flight
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Unmanned Aerial Systems (ICUAS), 2017
+                    <a href="https://doi.org/10.1109/ICUAS.2017.7991455" target="_blank" rel="noopener">[DOI]</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/projects/pastproject1-skywriting.JPG" alt="Project 9">
+            <div class="project-content">
+                <h3>Skywriting Unmanned Aerial Vehicle (UAV)</h3>
+                <p>
+                    Use a single UAV to generate (print) images in the sky during the day time.
+                    The message could be used in situations like search and rescue, disaster response
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> University of Nevada, Las Vegas (UNLV)
+                </p>
+                <p>
+                    <strong>Topics:</strong> Drones, Skywriting, Control, Autonomous Flight
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Unmanned Aerial Systems (ICUAS), 2017
+                    <a href="https://doi.org/10.1109/ICUAS.2017.7991455" target="_blank" rel="noopener">[DOI]</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/projects/pastproject1-skywriting.JPG" alt="Project 8">
+            <div class="project-content">
+                <h3>Skywriting Unmanned Aerial Vehicle (UAV)</h3>
+                <p>
+                    Use a single UAV to generate (print) images in the sky during the day time.
+                    The message could be used in situations like search and rescue, disaster response
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> University of Nevada, Las Vegas (UNLV)
+                </p>
+                <p>
+                    <strong>Topics:</strong> Drones, Skywriting, Control, Autonomous Flight
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Unmanned Aerial Systems (ICUAS), 2017
+                    <a href="https://doi.org/10.1109/ICUAS.2017.7991455" target="_blank" rel="noopener">[DOI]</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/projects/pastproject1-skywriting.JPG" alt="Project 7">
+            <div class="project-content">
+                <h3>Skywriting Unmanned Aerial Vehicle (UAV)</h3>
+                <p>
+                    Use a single UAV to generate (print) images in the sky during the day time.
+                    The message could be used in situations like search and rescue, disaster response
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> University of Nevada, Las Vegas (UNLV)
+                </p>
+                <p>
+                    <strong>Topics:</strong> Drones, Mobile Manipulation, Human Embodiment, Mixed Reality (MR), Control
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Unmanned Aerial Systems (ICUAS), 2017
+                    <a href="https://doi.org/10.1109/ICUAS.2017.7991455" target="_blank" rel="noopener">[DOI]</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/projects/pastproject6-humanembodied2.png" alt="Project 6">
+            <div class="project-content">
+                <h3>Human-embodied Drones for Horizontal Manipulation</h3>
+                <p>
+                    Use a single UAV to generate (print) images in the sky during the day time.
+                    The message could be used in situations like search and rescue, disaster response
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> U.S. Department of Transportation,
+                    Office of the Assistant Secretary for Research and Technology (USDOT/OST-R) under Grant No. 69A3551747126
+                </p>
+                <p>
+                    <strong>Topics:</strong> Drones, Mobile Manipulation, Human Embodiment, Mixed Reality (MR), Control
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Advanced Robotics and its Social Impacts (ARSO), 2022.
+                    <a href="https://doi.org/10.1109/ARSO54254.2022.9802972" target="_blank" rel="noopener">[DOI]</a>
+                    <br>
+                    Journal of Intelligent Service Robots (JIST), 2024
+                    <a href=" https://doi.org/10.1007/s11370-024-00535-4" target="_blank" rel="noopener">[DOI]</a>
+
+                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/projects/pastproject5-humanembodied.png" alt="Project 5">
+            <div class="project-content">
+                <h3>Human-embodied Drones for Vertical Manipulation</h3>
+                <p>
+                    Use a single UAV to generate (print) images in the sky during the day time.
+                    The message could be used in situations like search and rescue, disaster response
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> U.S. Department of Transportation,
+                    Office of the Assistant Secretary for Research and Technology (USDOT/OST-R) under Grant No. 69A3551747126
+                </p>
+                <p>
+                    <strong>Topics:</strong> Drones, Mobile Manipulation, Human Embodiment, Mixed Reality (MR), Control
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Unmanned Aerial Systems (ICUAS), 2021
+                    <a href="https://doi.org/10.1109/ICUAS51884.2021.9476704" target="_blank" rel="noopener">[DOI]</a>                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/projects/pastproject4-aerialdrillpress.png" alt="Project 4">
+            <div class="project-content">
+                <h3>Haptic-based Aerial Drill Press</h3>
+                <p>
+                    Development of customized haptic drill press to control mobile manipulating drones
+                    to drill through material surfaces. The operator can evaluate level of task completions using haptic feedback
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> U.S. Department of Transportation,
+                    Office of the Assistant Secretary for Research and Technology (USDOT/OST-R) under Grant No. 69A3551747126
+                </p>
+                <p>
+                    <strong>Topics:</strong> Drones, Mobile Manipulation, Teleoperation, Haptics
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Intelligent Robots and Systems (IROS), 2020
+                    <a href="https://doi.org/10.1109/IROS45743.2020.9340726" target="_blank" rel="noopener">[DOI]</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/projects/pastproject3-hapticmanipulation.png" alt="Project 3">
+            <div class="project-content">
+                <h3>Haptic-based Mobile Manipulating UAV</h3>
+                <p>
+                    Integrate haptic feedback system to mobile manipulating drones. The operator
+                    can leverage their experience to perform mobile manipulation tasks for bridge inspection and maintenance
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> U.S. Department of Transportation,
+                    Office of the Assistant Secretary for Research and Technology (USDOT/OST-R) under Grant No. 69A3551747126
+                </p>
+                <p>
+                    <strong>Topics:</strong> Drones, Mobile Manipulation, Teleoperation, Haptics
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE American Control Conference (ACC), 2020
+                    <a href="https://doi.org/10.23919/ACC45564.2020.9147799" target="_blank" rel="noopener">[DOI]</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/projects/pastproject2-labautomation.jpg" alt="Project 2">
+            <div class="project-content">
+                <h3>Lab Automation Drones for Mobile Manipulation in High Throughput Systems</h3>
+                <p>
+                    Development of mobile manipulating drones to deliver testing samples in high throughput systems
+                    for pharmaceutical laboratories
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> University of Nevada, Las Vegas (UNLV)
+                </p>
+                <p>
+                    <strong>Topics:</strong> Mobile Manipulation, Drones, Control, Lab Automation
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Consumer Electronics (ICCE), 2018
+                    <a href="https://doi.org/10.1109/ICCE.2018.8326268" target="_blank" rel="noopener">[DOI]</a>
+                    <br>
+                    IEEE International Conference on Ubiquitous Robots (UR), 2018
+                    <a href="https://doi.org/10.1109/URAI.2018.8441837" target="_blank" rel="noopener">[DOI]</a>
+
+                    <br>
+                    IEEE International Conference on Unmanned Aircraft Systems (ICUAS), 2018
+                    <a href="https://doi.org/10.1109/ICUAS.2018.8453278" target="_blank" rel="noopener">[DOI]</a>
+
+                </p>
+            </div>
+        </div>
+
+
+        <div class="project">
+            <img src="images/projects/pastproject1-skywriting.JPG" alt="Project 1">
+            <div class="project-content">
+                <h3>Skywriting Unmanned Aerial Vehicle (UAV)</h3>
+                <p>
+                    Use a single UAV to generate (print) images in the sky during the day time.
+                    The message could be used in situations like search and rescue, disaster response
+                </p>
+                <p>
+                    <strong>Funding Source:</strong> University of Nevada, Las Vegas (UNLV)
+                </p>
+                <p>
+                    <strong>Topics:</strong> Drones, Skywriting, Control, Autonomous Flight
+                </p>
+                <p>
+                    <strong>Publications :</strong> IEEE International Conference on Unmanned Aerial Systems (ICUAS), 2017
+                    <a href="https://doi.org/10.1109/ICUAS.2017.7991455" target="_blank" rel="noopener">[DOI]</a>
+                </p>
+            </div>
+        </div>
+        <!-- Add more .project as needed! -->
+    </div>
+</section>
+
+<footer>
+    <p style="text-align:center;">© 2025 HUSL – All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menuList = document.getElementById('menuList');
+        menuList.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
