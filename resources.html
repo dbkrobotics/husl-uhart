@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Resources - HUSL @ UHart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .resources-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .resources-container h1 {
+            text-align: center;
+            color: #D21034;
+            margin-bottom: 40px;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .resource-card {
+            background-color: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .resource-card:hover {
+            transform: scale(1.02);
+        }
+
+        .resource-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .resource-caption {
+            padding: 15px;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 992px) {
+            .resource-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="navbar-brand">
+            <img src="images/husl_logo.png" alt="HUSL Logo" class="husl-logo">
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul id="menuList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publication.html">Publications</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="resources-container">
+    <h1>Lab Resources</h1>
+
+    <div class="resource-grid">
+        <!-- Resource 1 -->
+        <div class="resource-card">
+            <img src="images/resources/mocaparena.JPG" alt="mocap">
+            <div class="resource-caption">Motion Capture Arena for Indoor Test</div>
+        </div>
+
+        <!-- Resource 2 -->
+        <div class="resource-card">
+            <img src="images/resources/laboffice.jpg" alt="laboffice">
+            <div class="resource-caption">Lab Office for Student Researchers (under Development)</div>
+        </div>
+
+
+        <div class="resource-card">
+            <img src="images/resources/drones.jpg" alt="New Resource">
+            <div class="resource-caption">Various Types of Drones (Quad/Hexa/Octo)</div>
+        </div>
+
+        <div class="resource-card">
+            <img src="images/resources/urmanipulator.jpg" alt="New Resource">
+            <div class="resource-caption">Robotic Manipulators</div>
+        </div>
+
+        <!-- Resource 3 -->
+        <div class="resource-card">
+            <img src="images/resources/makerspace.jpg" alt="makerspace">
+            <div class="resource-caption">Makerspace for Fabrications</div>
+        </div>
+
+        <!-- Resource 4 -->
+        <div class="resource-card">
+            <img src="images/resources/3dprinters.jpg" alt="3Dprinters">
+            <div class="resource-caption">Multiple 3D Printers</div>
+        </div>
+
+
+        <!-- Add more cards here -->
+        <!-- Example:
+        <div class="resource-card">
+          <img src="images/resources/new_resource.jpg" alt="New Resource">
+          <div class="resource-caption">Caption for New Resource</div>
+        </div>
+        -->
+    </div>
+</main>
+
+<footer>
+    <p style="text-align:center;">© 2025 HUSL – All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menuList = document.getElementById('menuList');
+        menuList.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>

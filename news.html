@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News - HUSL @ UHart</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .news-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .news-container h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #D21034;
+    }
+
+    .news-card {
+      display: flex;
+      gap: 20px;
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      flex-wrap: wrap;
+    }
+
+    .news-image {
+      flex: 0 0 180px;
+      max-width: 180px;
+    }
+
+    .news-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .news-content {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .news-date {
+      font-size: 0.9rem;
+      color: #999;
+      margin-bottom: 5px;
+    }
+
+    .news-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .news-title a {
+      color: #D21034;
+      text-decoration: none;
+    }
+
+    .news-title a:hover {
+      text-decoration: underline;
+    }
+
+    .news-description {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .news-card {
+        flex-direction: column;
+      }
+
+      .news-image {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="navbar-brand">
+      <img src="images/husl_logo.png" alt="HUSL Logo" class="husl-logo">
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul id="menuList">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publication.html">Publications</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="news.html" class="active">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="news-container">
+  <h1>Latest News & Updates</h1>
+
+  <!-- News Item #1 -->
+  <div class="news-card">
+    <div class="news-image">
+      <img src="images/news/vr_drone.jpg" alt="VR Drone">
+    </div>
+    <div class="news-content">
+      <div class="news-date">September 2025</div>
+      <div class="news-title">
+        <a href="https://example.com/vr-drone-paper" target="_blank">HUSL Lab Launches VR Drone Control Platform</a>
+      </div>
+      <div class="news-description">
+        We successfully tested our mixed reality interface for aerial manipulation tasks.
+        This allows remote operators to "embody" a drone through VR. Stay tuned for our ICRA 2026 paper!
+      </div>
+    </div>
+  </div>
+
+  <!-- News Item #2 -->
+  <div class="news-card">
+    <div class="news-image">
+      <img src="images/news/new_students.jpg" alt="New Students">
+    </div>
+    <div class="news-content">
+      <div class="news-date">August 2025</div>
+      <div class="news-title">
+        <a href="people.html">Welcoming New HUSL Members for Fall 2025</a>
+      </div>
+      <div class="news-description">
+        We welcomed 5 new undergraduate researchers this fall! Excited to have their energy and curiosity
+        as we kick off new robotics projects across swarm and AI domains.
+      </div>
+    </div>
+  </div>
+
+  <!-- News Item #3 -->
+  <div class="news-card">
+    <div class="news-image">
+      <img src="images/news/stem_outreach.jpg" alt="STEM Camp">
+    </div>
+    <div class="news-content">
+      <div class="news-date">June 2025</div>
+      <div class="news-title">
+        <a href="https://www.instagram.com/p/EXAMPLE/" target="_blank">Summer Outreach: HUSL at STEM Camp</a>
+      </div>
+      <div class="news-description">
+        Our team visited a local STEM outreach program and showcased autonomous drone navigation
+        and robotic grasping demos to inspire the next generation of engineers.
+      </div>
+    </div>
+  </div>
+
+  <!-- Add more cards as needed -->
+</main>
+
+<footer>
+  <p style="text-align:center;">© 2025 HUSL – All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menuList = document.getElementById('menuList');
+    menuList.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
